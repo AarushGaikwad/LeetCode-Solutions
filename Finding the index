@@ -1,0 +1,20 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+        //If the needle is empty, return 0
+        if (needle.isEmpty()) {
+            return 0;
+        }
+
+        int haystackLength = haystack.length();
+        int needleLength = needle.length();
+
+        // Iterate through the haystack
+        for (int i = 0; i <= haystackLength - needleLength; i++) {
+            // Check if the substring of haystack matches needle
+            if (haystack.substring(i, i + needleLength).equals(needle)) {
+                return i; // Return the index of the first occurrence
+            }
+        }
+        return -1;
+    }
+}
